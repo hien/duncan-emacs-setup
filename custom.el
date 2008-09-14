@@ -1,0 +1,38 @@
+
+; UI customizations
+; Get rid of that icon tool bar
+(tool-bar-mode -1)
+;; Remove splash screen
+(setq inhibit-splash-screen t)
+(global-font-lock-mode 1)
+
+
+; never use tabs
+(setq-default indent-tabs-mode nil)
+(setq show-trailing-whitespace t)
+
+; dont create backups
+(setq make-backup-files nil) 
+
+(load "custom-c"    ) ; C/C++ custom
+
+(load "custom-ruby"    ) ; ruby customization
+
+;(setq 'compile-command "ant -emacs")
+
+;(load "custom-cmake") ; cmake autoload
+;(load "custom-git") ; git mode
+
+(global-auto-revert-mode)
+
+(load "custom-python") ; python
+
+; buffer list with alt-return
+(global-set-key [(meta return)] 'electric-buffer-list   )
+; I hate the ctrl-z stuff
+;(global-set-key "C-Z" nil)
+
+; activate textmate type snippets
+(require 'yasnippet) ;; not yasnippet-bundle
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/snippets")

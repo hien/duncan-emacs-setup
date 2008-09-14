@@ -1,0 +1,7 @@
+
+emacs setup for Duncan Mac-Vicar P.
+
+Clone as git clone git@github.com:dmacvicar/duncan-emacs-setup.git .emacs.d
+ln -s .emacs.d/dotemacs .emacs
+
+

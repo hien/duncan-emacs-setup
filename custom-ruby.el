@@ -1,0 +1,22 @@
+; loads ruby mode when a .rb file is opened.
+(autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
+(add-to-list 'auto-mode-alist  '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist  '("\\.rhtml$" . html-mode))
+(setq interpreter-mode-alist
+  (cons '("ruby" . ruby-mode)
+  interpreter-mode-alist))
+(add-hook 'ruby-mode-hook 'turn-on-font-lock)
+
+; indent on newline
+(add-hook 'ruby-mode-hook (lambda () (local-set-key "\r" 'newline-and-indent)))
+
+; electric features
+(require 'ruby-electric)
+
+(defun my-ruby-mode-hook ()
+  (font-lock-mode t)
+  (setq standard-indent 2)
+  (pabbrev-mode t)
+  (ruby-electric-mode t)
+  (define-key ruby-mode-map "\C-c\C-a" 'ruby-eval-buffer))
+(add-hook 'ruby-mode-hook 'my-ruby-mode-hook)

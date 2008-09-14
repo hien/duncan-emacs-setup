@@ -1,0 +1,3 @@
+(setq load-path (cons (expand-file-name "~/.emacs.d") load-path))
+(load "custom")
+
