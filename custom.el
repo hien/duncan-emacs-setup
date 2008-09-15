@@ -4,8 +4,13 @@
 (tool-bar-mode -1)
 ;; Remove splash screen
 (setq inhibit-splash-screen t)
-(global-font-lock-mode 1)
+; shutup the beep
+(setq visible-bell t)
 
+; activate textmate type snippets
+(require 'yasnippet) ;; not yasnippet-bundle
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/snippets")
 
 ; never use tabs
 (setq-default indent-tabs-mode nil)
@@ -16,12 +21,10 @@
 
 (load "custom-c"    ) ; C/C++ custom
 
-(load "custom-ruby"    ) ; ruby customization
-
 ;(setq 'compile-command "ant -emacs")
 
-;(load "custom-cmake") ; cmake autoload
-;(load "custom-git") ; git mode
+(load "custom-cmake") ; cmake autoload
+(load "custom-git") ; git mode
 
 (global-auto-revert-mode)
 
@@ -32,7 +35,6 @@
 ; I hate the ctrl-z stuff
 ;(global-set-key "C-Z" nil)
 
-; activate textmate type snippets
-(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/snippets")
+(load "custom-ruby") ; ruby customization
+
+(global-font-lock-mode 1)
