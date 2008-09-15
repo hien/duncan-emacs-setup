@@ -1,8 +1,7 @@
 ; Add cmake listfile names to the mode list.
-(setq auto-mode-alist
-  (append
-   '(("CMakeLists\\.txt\\'" . cmake-mode))
-   '(("\\.cmake\\'" . cmake-mode))
-   auto-mode-alist))
+(autoload 'cmake-mode "cmake-mode" t)
 
-(autoload 'cmake-mode "~/.emacs.d/cmake-mode.el" t)
+(add-to-list 'auto-mode-alist'("CMakeLists\\.txt\\'" . cmake-mode))
+(add-to-list 'auto-mode-alist'("\\.cmake\\'" . cmake-mode))
+(add-hook 'cmake-mode-hook 'turn-on-font-lock)
+
