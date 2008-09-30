@@ -12,6 +12,9 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/snippets")
 
+; activate pastie
+(require 'pastie)
+
 ; never use tabs
 (setq-default indent-tabs-mode nil)
 (setq show-trailing-whitespace t)
