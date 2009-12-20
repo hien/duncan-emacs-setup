@@ -41,3 +41,5 @@
 (load "custom-ruby") ; ruby customization
 
 (global-font-lock-mode 1)
+(set-default-font "Inconsolata:style=Medium")
+
