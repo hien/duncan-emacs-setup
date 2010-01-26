@@ -1,6 +1,7 @@
 ; loads ruby mode when a .rb file is opened.
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 (add-to-list 'auto-mode-alist  '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist  '("\\.rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist  '("\\.rhtml$" . html-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 (autoload 'ri "ri-ruby.el" nil t)
