@@ -35,7 +35,8 @@
 (load "custom-python") ; python
 
 ; buffer list with alt-return
-(global-set-key [(meta return)] 'electric-buffer-list   )
+;(global-set-key [(meta return)] 'electric-buffer-list   )
+(global-set-key (kbd "M-RET") 'electric-buffer-list   )
 ; I hate the ctrl-z stuff
 ;(global-set-key "C-Z" nil)
 
