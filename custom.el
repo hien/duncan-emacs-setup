@@ -1,7 +1,8 @@
 
 ; UI customizations
 ; Get rid of that icon tool bar
-(tool-bar-mode -1)
+(if (memq window-system '(x w32 mac))
+  (tool-bar-mode -1))
 ;; Remove splash screen
 (setq inhibit-splash-screen t)
 ; shutup the beep
