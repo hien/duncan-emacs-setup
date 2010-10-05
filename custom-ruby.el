@@ -29,3 +29,7 @@
 ;;	(local-set-key "\C-c\C-a" 'ri-ruby-show-args)
 ))
 
+; auto syntax check
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+

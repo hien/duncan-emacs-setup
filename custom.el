@@ -16,6 +16,9 @@
 ; activate pastie
 (require 'pastie)
 
+; syntax check
+;(require 'init-flymake)
+
 ; never use tabs
 (setq-default indent-tabs-mode nil)
 (setq show-trailing-whitespace t)
