@@ -23,6 +23,29 @@
 (setq-default indent-tabs-mode nil)
 (setq show-trailing-whitespace t)
 
+;; from http://emacseditor.tribe.net/thread/5729c619-6e30-4b75-89fe-365388da52bf
+;; Trim any trailing whitespaces before saving a file 
+(defun trim-trailing-whitespace () 
+"This will trim trailing whitespace before saving a file." 
+(interactive) 
+(save-excursion 
+(beginning-of-buffer) 
+(replace-regexp "[ \t]+$" "" nil) 
+nil) 
+) 
+(defun toggle-trim-whitespace-on () 
+"This turns on whitespace trimming" 
+(interactive) 
+;; Add the hooks 
+(add-hook 'write-file-hooks 'trim-trailing-whitespace)) 
+(defun toggle-trim-whitespace-off () 
+"This turns pff whitespace trimming" 
+(interactive) 
+;; Remove the hooks 
+(remove-hook 'write-file-hooks 'trim-trailing-whitespace)) 
+;; On by default 
+(add-hook 'write-file-hooks 'trim-trailing-whitespace)
+
 ; dont create backups
 (setq make-backup-files nil) 
 
