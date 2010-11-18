@@ -1,0 +1,8 @@
+--- 
+vendor.d/auto-complete-clang: 
+  branch: master
+  remote: braid/vendor.d/auto-complete-clang
+  revision: 18d30075eb71b68f85e49a5fc0d4701a20ba54d6
+  squashed: true
+  type: git
+  url: https://github.com/brianjcj/auto-complete-clang.git
