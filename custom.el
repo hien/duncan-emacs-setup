@@ -16,7 +16,7 @@
 ; activate pastie
 (require 'pastie)
 
-(require 'auto-complete)
+;(require 'auto-complete)
 ;(ac-config-default)
 ;(setq ac-auto-start nil)
 ;(setq ac-quick-help-delay 0.5)
@@ -31,50 +31,46 @@
 ;  (add-hook 'css-mode-hook 'ac-css-mode-setup)
 ;  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
 ;  (global-auto-complete-mode t))
+;(my-ac-config)
 
 ; syntax check
-;(require 'init-flymake)
+(require 'flymake)
+;(setq flymake-log-level 3)
 
 ; never use tabs
 (setq-default indent-tabs-mode nil)
 (setq show-trailing-whitespace t)
 
 ;; from http://emacseditor.tribe.net/thread/5729c619-6e30-4b75-89fe-365388da52bf
-;; Trim any trailing whitespaces before saving a file 
-(defun trim-trailing-whitespace () 
-"This will trim trailing whitespace before saving a file." 
-(interactive) 
-(save-excursion 
-(beginning-of-buffer) 
-(replace-regexp "[ \t]+$" "" nil) 
-nil) 
-) 
-(defun toggle-trim-whitespace-on () 
-"This turns on whitespace trimming" 
-(interactive) 
-;; Add the hooks 
-(add-hook 'write-file-hooks 'trim-trailing-whitespace)) 
-(defun toggle-trim-whitespace-off () 
-"This turns pff whitespace trimming" 
-(interactive) 
-;; Remove the hooks 
-(remove-hook 'write-file-hooks 'trim-trailing-whitespace)) 
-;; On by default 
+;; Trim any trailing whitespaces before saving a file
+(defun trim-trailing-whitespace ()
+"This will trim trailing whitespace before saving a file."
+(interactive)
+(save-excursion
+(beginning-of-buffer)
+(replace-regexp "[ \t]+$" "" nil)
+nil)
+)
+(defun toggle-trim-whitespace-on ()
+"This turns on whitespace trimming"
+(interactive)
+;; Add the hooks
+(add-hook 'write-file-hooks 'trim-trailing-whitespace))
+(defun toggle-trim-whitespace-off ()
+"This turns pff whitespace trimming"
+(interactive)
+;; Remove the hooks
+(remove-hook 'write-file-hooks 'trim-trailing-whitespace))
+;; On by default
 (add-hook 'write-file-hooks 'trim-trailing-whitespace)
 
 ; dont create backups
-(setq make-backup-files nil) 
-
-;(load "custom-c"    ) ; C/C++ custom
-
-;(setq 'compile-command "ant -emacs")
+(setq make-backup-files nil)
 
 (load "custom-cmake") ; cmake autoload
 (load "custom-git") ; git mode
 
 (global-auto-revert-mode)
-
-(load "custom-python") ; python
 
 ; buffer list with alt-return
 ;(global-set-key [(meta return)] 'electric-buffer-list   )
@@ -82,7 +78,11 @@ nil)
 ; I hate the ctrl-z stuff
 ;(global-set-key "C-Z" nil)
 
+(load "custom-python") ; python
 (load "custom-ruby") ; ruby customization
+(load "custom-ycp") ; ycp customization
+(load "custom-c") ; C/C++ customization
+(load "custom-java") ; Java customization
 
 (global-font-lock-mode 1)
 (set-default-font "Inconsolata:style=Medium")

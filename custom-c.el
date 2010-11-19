@@ -1,13 +1,7 @@
-
-require 'auto-complete-clang)
-(defun my-ac-cc-mode-setup ()
-    (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
-
 ; no tabs, but indent with 4 spaces
 (setq c-mode-hook
     (function (lambda ()
                 (setq indent-tabs-mode nil)
-                ('my-ac-cc-mode-setup)
                 (setq c-indent-level 4))))
 (setq objc-mode-hook
     (function (lambda ()
@@ -23,6 +17,10 @@ require 'auto-complete-clang)
    (c-set-style "Stroustrup")
    (c-toggle-auto-state)))
 
+; auto syntax check
+(require 'flymake-clang-c)
+(add-hook 'c-mode-hook 'flymake-clang-c-load)
+(require 'flymake-clang-c++)
+(add-hook 'c++-mode-hook 'flymake-clang-c++-load)
 
-;(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
 
