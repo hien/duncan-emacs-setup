@@ -1,5 +1,5 @@
 ; disable annoying Ctrl-Z send to background
-(global-set-key "C-Z" nil)
+(global-set-key "\C-Z" nil)
 ; UI customizations
 ; Get rid of that icon tool bar
 (if (memq window-system '(x w32 mac))
