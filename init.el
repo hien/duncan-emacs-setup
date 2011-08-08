@@ -9,4 +9,10 @@
         (normal-top-level-add-subdirs-to-load-path))))
 (setq load-path (cons (expand-file-name "~/.emacs.d") load-path))
 
+(let ((nfsdir "/suse/dmacvicar/.emacs.d")
+  (cachedir "/space/cache/emacs"))
+  (setq load-path (append load-path (list cachedir nfsdir)))
+  (require 'elisp-cache)
+  (elisp-cache nfsdir cachedir)
+)
 (load "custom")
