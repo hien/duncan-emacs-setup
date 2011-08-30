@@ -19,6 +19,10 @@
 
 ; auto completion
 ;(load "custom-autocomplete")
+;;(add-to-list 'load-path (concat myoptdir "AC"))
+(require 'auto-complete-config)
+;;(add-to-list 'ac-dictionary-directories (concat myoptdir "AC/ac-dict"))
+(require 'custom-autocomplete)
 
 ; automatic syntax check
 (require 'flymake)
@@ -30,26 +34,27 @@
 
 ;; from http://emacseditor.tribe.net/thread/5729c619-6e30-4b75-89fe-365388da52bf
 ;; Trim any trailing whitespaces before saving a file
-(defun trim-trailing-whitespace ()
-"This will trim trailing whitespace before saving a file."
-(interactive)
-(save-excursion
-(beginning-of-buffer)
-(replace-regexp "[ \t]+$" "" nil)
-nil)
-)
-(defun toggle-trim-whitespace-on ()
-"This turns on whitespace trimming"
-(interactive)
+;;(defun trim-trailing-whitespace ()
+;;"This will trim trailing whitespace before saving a file."
+;;(interactive)
+;;(save-excursion
+;;(beginning-of-buffer)
+;;(replace-regexp "[ \t]+$" "" nil)
+;;nil)
+;;)
+
+;;(defun toggle-trim-whitespace-on ()
+;;"This turns on whitespace trimming"
+;;(interactive)
 ;; Add the hooks
-(add-hook 'write-file-hooks 'trim-trailing-whitespace))
-(defun toggle-trim-whitespace-off ()
-"This turns pff whitespace trimming"
-(interactive)
+;;(add-hook 'write-file-hooks 'trim-trailing-whitespace))
+;;(defun toggle-trim-whitespace-off ()
+;;"This turns pff whitespace trimming"
+;;(interactive)
 ;; Remove the hooks
-(remove-hook 'write-file-hooks 'trim-trailing-whitespace))
+;;(remove-hook 'write-file-hooks 'trim-trailing-whitespace))
 ;; On by default
-(add-hook 'write-file-hooks 'trim-trailing-whitespace)
+;;(add-hook 'write-file-hooks 'trim-trailing-whitespace)
 
 ; dont create backups
 (setq make-backup-files nil)
@@ -72,5 +77,5 @@ nil)
 (load "custom-java") ; Java customization
 
 (global-font-lock-mode 1)
-(set-default-font "Inconsolata:style=Medium")
+(set-frame-font "Inconsolata:style=Medium")
 
