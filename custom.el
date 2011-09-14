@@ -9,6 +9,10 @@
 ; shutup the beep
 (setq visible-bell t)
 
+(custom-set-variables
+ '(desktop-buffers-not-to-save "\\(^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|.*_flymake.*\\)$")
+ '(desktop-files-not-to-save "^/[^/:]*:\\|.*_flymake\\..*"))
+
 ; activate textmate type snippets
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
@@ -22,7 +26,8 @@
 ;;(add-to-list 'load-path (concat myoptdir "AC"))
 (require 'auto-complete-config)
 ;;(add-to-list 'ac-dictionary-directories (concat myoptdir "AC/ac-dict"))
-(require 'custom-autocomplete)
+;(require 'custom-autocomplete)
+(load "custom-autocomplete")
 
 ; automatic syntax check
 (require 'flymake)

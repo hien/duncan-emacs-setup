@@ -14,3 +14,5 @@
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
   (global-auto-complete-mode t))
 (my-ac-config)
+
+(provide 'custom-autocomplete)
