@@ -48,6 +48,7 @@
 ;;nil)
 ;;)
 
+(setq-default show-trailing-whitespace t)
 ;;(defun toggle-trim-whitespace-on ()
 ;;"This turns on whitespace trimming"
 ;;(interactive)
