@@ -81,6 +81,7 @@
 (load "custom-ycp") ; ycp customization
 (load "custom-c") ; C/C++ customization
 (load "custom-java") ; Java customization
+(load "custom-vala")
 
 (global-font-lock-mode 1)
 (set-frame-font "Inconsolata:style=Medium")
